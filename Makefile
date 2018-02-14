@@ -20,6 +20,7 @@ NG=ng
 NPM=npm
 NODE=node
 GULP=gulp
+BOWER=bower
 
 MONGO=mongo
 
@@ -37,6 +38,7 @@ uninstall:
 	rm -f $(DIR_BIN)/$(NODE)
 	rm -f $(DIR_BIN)/$(GULP)
 	rm -f $(DIR_BIN)/$(MONGO)
+	rm -f $(DIR_BIN)/$(BOWER)
 	rm -rf $(DIR_HELPERS)
 
 install:
@@ -51,6 +53,7 @@ install:
 	cp -r $(DIR_SH_NODE)/$(NPM).$(EXT_FILE) $(DIR_HELPERS)/$(NPM).$(EXT_FILE).$(VERSION)
 	cp -r $(DIR_SH_NODE)/$(NODE).$(EXT_FILE) $(DIR_HELPERS)/$(NODE).$(EXT_FILE).$(VERSION)
 	cp -r $(DIR_SH_NODE)/$(GULP).$(EXT_FILE) $(DIR_HELPERS)/$(GULP).$(EXT_FILE).$(VERSION)
+	cp -r $(DIR_SH_NODE)/$(BOWER).$(EXT_FILE) $(DIR_HELPERS)/$(BOWER).$(EXT_FILE).$(VERSION)
 	cp -r $(DIR_SH_MONGO)/$(MONGO).$(EXT_FILE) $(DIR_HELPERS)/$(MONGO).$(EXT_FILE).$(VERSION)
 	rm -f $(DIR_BIN)/$(PHP)
 	rm -f $(DIR_BIN)/$(PHP5)
@@ -61,6 +64,7 @@ install:
 	rm -f $(DIR_BIN)/$(NPM)
 	rm -f $(DIR_BIN)/$(NODE)
 	rm -f $(DIR_BIN)/$(GULP)
+	rm -f $(DIR_BIN)/$(BOWER)
 	rm -f $(DIR_BIN)/$(MONGO)
 	ln -sF $(DIR_HELPERS)/$(PHP).$(EXT_FILE).$(VERSION) $(DIR_BIN)/$(PHP)
 	ln -sF $(DIR_HELPERS)/$(PHP5).$(EXT_FILE).$(VERSION) $(DIR_BIN)/$(PHP5)
@@ -71,6 +75,7 @@ install:
 	ln -sF $(DIR_HELPERS)/$(NPM).$(EXT_FILE).$(VERSION) $(DIR_BIN)/$(NPM)
 	ln -sF $(DIR_HELPERS)/$(NODE).$(EXT_FILE).$(VERSION) $(DIR_BIN)/$(NODE)
 	ln -sF $(DIR_HELPERS)/$(GULP).$(EXT_FILE).$(VERSION) $(DIR_BIN)/$(GULP)
+	ln -sF $(DIR_HELPERS)/$(BOWER).$(EXT_FILE).$(VERSION) $(DIR_BIN)/$(BOWER)
 	ln -sF $(DIR_HELPERS)/$(MONGO).$(EXT_FILE).$(VERSION) $(DIR_BIN)/$(MONGO)
 	chmod a+x $(DIR_BIN)/$(PHP)
 	chmod a+x $(DIR_BIN)/$(PHP5)
@@ -81,5 +86,6 @@ install:
 	chmod a+x $(DIR_BIN)/$(NPM)
 	chmod a+x $(DIR_BIN)/$(NODE)
 	chmod a+x $(DIR_BIN)/$(GULP)
+	chmod a+x $(DIR_BIN)/$(BOWER)
 	chmod a+x $(DIR_BIN)/$(MONGO)
 	@echo "Ok!"
