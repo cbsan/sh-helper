@@ -1,10 +1,10 @@
 #!/bin/bash
 
 ###########################################################
-# Helper for use container node in development environment #
+# Helper for use container mongo in development environment #
 ###########################################################
 
-CONTAINERNAME="helper_gulp"
+CONTAINERNAME="helper_mongo"
 DIR=${PWD}
 ROOTDIR=$(echo "$DIR" | cut -d "/" -f3)
 CONTAINERNAME=$CONTAINERNAME"_"$ROOTDIR
