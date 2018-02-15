@@ -15,6 +15,7 @@ PHP5=php5
 PHPCS=phpcs
 PHPCBF=phpcbf
 PHPCSFIXER=php-cs-fixer
+COMPOSER=composer
 
 NG=ng
 NPM=npm
@@ -33,6 +34,7 @@ uninstall:
 	rm -f $(DIR_BIN)/$(PHPCS)
 	rm -f $(DIR_BIN)/$(PHPCBF)
 	rm -f $(DIR_BIN)/$(PHPCSFIXER)
+	rm -f $(DIR_BIN)/$(COMPOSER)
 	rm -f $(DIR_BIN)/$(NG)
 	rm -f $(DIR_BIN)/$(NPM)
 	rm -f $(DIR_BIN)/$(NODE)
@@ -49,6 +51,7 @@ install:
 	cp -r $(DIR_SH_PHP)/$(PHPCS).$(EXT_FILE) $(DIR_HELPERS)/$(PHPCS).$(EXT_FILE).$(VERSION)
 	cp -r $(DIR_SH_PHP)/$(PHPCBF).$(EXT_FILE) $(DIR_HELPERS)/$(PHPCBF).$(EXT_FILE).$(VERSION)
 	cp -r $(DIR_SH_PHP)/$(PHPCSFIXER).$(EXT_FILE) $(DIR_HELPERS)/$(PHPCSFIXER).$(EXT_FILE).$(VERSION)
+	cp -r $(DIR_SH_PHP)/$(COMPOSER).$(EXT_FILE) $(DIR_HELPERS)/$(COMPOSER).$(EXT_FILE).$(VERSION)
 	cp -r $(DIR_SH_NODE)/$(NG).$(EXT_FILE) $(DIR_HELPERS)/$(NG).$(EXT_FILE).$(VERSION)
 	cp -r $(DIR_SH_NODE)/$(NPM).$(EXT_FILE) $(DIR_HELPERS)/$(NPM).$(EXT_FILE).$(VERSION)
 	cp -r $(DIR_SH_NODE)/$(NODE).$(EXT_FILE) $(DIR_HELPERS)/$(NODE).$(EXT_FILE).$(VERSION)
@@ -60,6 +63,7 @@ install:
 	rm -f $(DIR_BIN)/$(PHPCS)
 	rm -f $(DIR_BIN)/$(PHPCBF)
 	rm -f $(DIR_BIN)/$(PHPCSFIXER)
+	rm -f $(DIR_BIN)/$(COMPOSER)
 	rm -f $(DIR_BIN)/$(NG)
 	rm -f $(DIR_BIN)/$(NPM)
 	rm -f $(DIR_BIN)/$(NODE)
@@ -71,6 +75,7 @@ install:
 	ln -sF $(DIR_HELPERS)/$(PHPCS).$(EXT_FILE).$(VERSION) $(DIR_BIN)/$(PHPCS)
 	ln -sF $(DIR_HELPERS)/$(PHPCBF).$(EXT_FILE).$(VERSION) $(DIR_BIN)/$(PHPCBF)
 	ln -sF $(DIR_HELPERS)/$(PHPCSFIXER).$(EXT_FILE).$(VERSION) $(DIR_BIN)/$(PHPCSFIXER)
+	ln -sF $(DIR_HELPERS)/$(COMPOSER).$(EXT_FILE).$(VERSION) $(DIR_BIN)/$(COMPOSER)
 	ln -sF $(DIR_HELPERS)/$(NG).$(EXT_FILE).$(VERSION) $(DIR_BIN)/$(NG)
 	ln -sF $(DIR_HELPERS)/$(NPM).$(EXT_FILE).$(VERSION) $(DIR_BIN)/$(NPM)
 	ln -sF $(DIR_HELPERS)/$(NODE).$(EXT_FILE).$(VERSION) $(DIR_BIN)/$(NODE)
@@ -82,6 +87,7 @@ install:
 	chmod a+x $(DIR_BIN)/$(PHPCS)
 	chmod a+x $(DIR_BIN)/$(PHPCBF)
 	chmod a+x $(DIR_BIN)/$(PHPCSFIXER)
+	chmod a+x $(DIR_BIN)/$(COMPOSER)
 	chmod a+x $(DIR_BIN)/$(NG)
 	chmod a+x $(DIR_BIN)/$(NPM)
 	chmod a+x $(DIR_BIN)/$(NODE)
