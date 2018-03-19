@@ -18,6 +18,12 @@ else
     VOLUMENOW=$(cat "$FILELOADVOLUMENOW")
 fi
 
+if [ ! -d "$VOLUMENOW" ] || [ ! "$VOLUMENOW" == "$DIR" ]; then
+    echo $DIR > $FILELOADVOLUMENOW
+    VOLUMENOW=$DIR
+    docker stop $(docker ps -aq -f name="$CONTAINERNAME") >> /dev/null 2>&1
+fi
+
 if [ ! $(docker ps -q -f status=running -f name="$CONTAINERNAME") ]; then
     
     if [ ! $(docker ps -aq -f name="$CONTAINERNAME" -f status=running) ]; then
