@@ -33,7 +33,7 @@ if [ ! $(docker ps -q -f status=running -f name="$CONTAINERNAME") ]; then
     if [ ! $(docker ps -aq -f name="$CONTAINERNAME" -f status=running) ]; then
         docker rm -f "$CONTAINERNAME" 2> /dev/null
     fi
-    docker run -tid --name "$CONTAINERNAME" -v $VOLUMENOW:/var/www cbsan/php:5.6-tools /bin/bash >> /dev/null 2>&1
+    docker run -tid --name "$CONTAINERNAME" -v ~/.ssh:/root/.ssh -v $VOLUMENOW:/var/www cbsan/php:5.6-tools /bin/bash >> /dev/null 2>&1
 fi
 
 docker exec "$CONTAINERNAME" composer $COMMANDEXEC
