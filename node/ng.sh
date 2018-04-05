@@ -33,10 +33,4 @@ if [ ! $(docker ps -q -f status=running -f name="$CONTAINERNAME") ]; then
     docker run -itd --name "$CONTAINERNAME" -v "$VOLUMENOW":/usr/src/app -w /usr/src/app  -v ~/.ssh:/root/.ssh -w /usr/src/app cbsan/node:tools /bin/ash > /dev/null
 fi
 
-if [ ! -d "$NODEMODULESDIR" ];then
-    mkdir -p $NODEMODULESDIR
-fi
-
-docker cp -aL "$CONTAINERNAME":"$NODEMODULESDIR" $NODEMODULESDIR
-
 docker exec "$CONTAINERNAME" ng $COMMANDEXEC
