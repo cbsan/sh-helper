@@ -43,6 +43,10 @@ uninstall:
 	rm -f $(DIR_BIN)/$(BOWER)
 	rm -rf $(DIR_HELPERS)
 
+update:
+	make uninstall
+	make install
+
 install:
 	@echo "Configuring helpers..."
 	rm -rf $(DIR_HELPERS) && mkdir -p $(DIR_HELPERS)
