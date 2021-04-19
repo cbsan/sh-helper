@@ -7,6 +7,7 @@ DIR_BIN=/usr/local/bin
 DIR_SH_PHP=./php
 DIR_SH_NODE=./node
 DIR_SH_MONGO=./mongo
+DIR_SH_FLUTTER=./flutter
 EXT_FILE=sh
 VERSION=1
 
@@ -22,6 +23,9 @@ NPM=npm
 NODE=node
 GULP=gulp
 BOWER=bower
+
+FLUTTER=flutter
+DART=dart
 
 MONGO=mongo
 
@@ -41,6 +45,8 @@ uninstall:
 	rm -f $(DIR_BIN)/$(GULP)
 	rm -f $(DIR_BIN)/$(MONGO)
 	rm -f $(DIR_BIN)/$(BOWER)
+	rm -f $(DIR_BIN)/$(FLUTTER)
+	rm -f $(DIR_BIN)/$(DART)
 	rm -rf $(DIR_HELPERS)
 
 update:
@@ -62,6 +68,8 @@ install:
 	cp -r $(DIR_SH_NODE)/$(GULP).$(EXT_FILE) $(DIR_HELPERS)/$(GULP).$(EXT_FILE).$(VERSION)
 	cp -r $(DIR_SH_NODE)/$(BOWER).$(EXT_FILE) $(DIR_HELPERS)/$(BOWER).$(EXT_FILE).$(VERSION)
 	cp -r $(DIR_SH_MONGO)/$(MONGO).$(EXT_FILE) $(DIR_HELPERS)/$(MONGO).$(EXT_FILE).$(VERSION)
+	cp -r $(DIR_SH_FLUTTER)/$(FLUTTER).$(EXT_FILE) $(DIR_HELPERS)/$(FLUTTER).$(EXT_FILE).$(VERSION)
+	cp -r $(DIR_SH_FLUTTER)/$(DART).$(EXT_FILE) $(DIR_HELPERS)/$(DART).$(EXT_FILE).$(VERSION)
 	rm -f $(DIR_BIN)/$(PHP)
 	rm -f $(DIR_BIN)/$(PHP5)
 	rm -f $(DIR_BIN)/$(PHPCS)
@@ -74,6 +82,8 @@ install:
 	rm -f $(DIR_BIN)/$(GULP)
 	rm -f $(DIR_BIN)/$(BOWER)
 	rm -f $(DIR_BIN)/$(MONGO)
+	rm -f $(DIR_BIN)/$(FLUTTER)
+	rm -f $(DIR_BIN)/$(DART)
 	ln -sF $(DIR_HELPERS)/$(PHP).$(EXT_FILE).$(VERSION) $(DIR_BIN)/$(PHP)
 	ln -sF $(DIR_HELPERS)/$(PHP5).$(EXT_FILE).$(VERSION) $(DIR_BIN)/$(PHP5)
 	ln -sF $(DIR_HELPERS)/$(PHPCS).$(EXT_FILE).$(VERSION) $(DIR_BIN)/$(PHPCS)
@@ -86,6 +96,8 @@ install:
 	ln -sF $(DIR_HELPERS)/$(GULP).$(EXT_FILE).$(VERSION) $(DIR_BIN)/$(GULP)
 	ln -sF $(DIR_HELPERS)/$(BOWER).$(EXT_FILE).$(VERSION) $(DIR_BIN)/$(BOWER)
 	ln -sF $(DIR_HELPERS)/$(MONGO).$(EXT_FILE).$(VERSION) $(DIR_BIN)/$(MONGO)
+	ln -sF $(DIR_HELPERS)/$(FLUTTER).$(EXT_FILE).$(VERSION) $(DIR_BIN)/$(FLUTTER)
+	ln -sF $(DIR_HELPERS)/$(DART).$(EXT_FILE).$(VERSION) $(DIR_BIN)/$(DART)
 	chmod a+x $(DIR_BIN)/$(PHP)
 	chmod a+x $(DIR_BIN)/$(PHP5)
 	chmod a+x $(DIR_BIN)/$(PHPCS)
@@ -98,4 +110,6 @@ install:
 	chmod a+x $(DIR_BIN)/$(GULP)
 	chmod a+x $(DIR_BIN)/$(BOWER)
 	chmod a+x $(DIR_BIN)/$(MONGO)
+	chmod a+x $(DIR_BIN)/$(FLUTTER)
+	chmod a+x $(DIR_BIN)/$(DART)
 	@echo "Ok!"
